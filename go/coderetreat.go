@@ -6,13 +6,12 @@ import (
 )
 
 func isPalindrome(a string) bool {
-	r := []rune(a)
-	for i := 0; i < len(r)/2; i++ {
-		tmp := r[i]
-		r[i] = r[len(r)-i-1]
-		r[len(r)-i-1] = tmp
+	for i := 0; i < len(a)/2; i++ {
+		if a[i] != a[len(a)-i-1] {
+			return false
+		}
 	}
-	return a == string(r)
+	return true
 }
 
 func findMin(a []int) (int, error) {
